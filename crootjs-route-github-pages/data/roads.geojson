@@ -1,0 +1,34 @@
+{
+  "type": "FeatureCollection",
+  "name": "ULBI_to_Bumi_Sariwangi_2_route_data",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ULBI - titik berangkat",
+        "kind": "waypoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.575689,
+          -6.874305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bumi Sariwangi 2 - titik tujuan",
+        "kind": "waypoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5673,
+          -6.8638
+        ]
+      }
+    }
+  ]
+}
