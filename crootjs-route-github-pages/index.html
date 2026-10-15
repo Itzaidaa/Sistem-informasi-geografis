@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f172a">
+  <title>Route Finder — CrootJS</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./main.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">R</div>
+    <div><strong>Route Finder</strong><small>Powered by CrootJS</small></div>
+    <a class="docs-link" href="https://croot.js.org/" target="_blank" rel="noreferrer">CrootJS ↗</a>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <p class="eyebrow">ROUTE PLANNER</p>
+      <h1>Temukan rute perjalanan</h1>
+      <p class="intro">Rute dari Universitas Logistik dan Bisnis Internasional (ULBI) ke Bumi Sariwangi 2. Pilih titik di peta untuk mengubah lokasi, lalu hitung rute jalan.</p>
+
+      <div class="field">
+        <label for="startName">Titik berangkat</label>
+        <input id="startName" value="Universitas Logistik dan Bisnis Internasional (ULBI)" autocomplete="off">
+        <div class="coords" id="startCoords">Belum dipilih</div>
+        <button id="pickStart" class="secondary" type="button">Pilih di peta</button>
+      </div>
+
+      <div class="field">
+        <label for="endName">Titik tujuan</label>
+        <input id="endName" value="Bumi Sariwangi 2" autocomplete="off">
+        <div class="coords" id="endCoords">Belum dipilih</div>
+        <button id="pickEnd" class="secondary" type="button">Pilih di peta</button>
+      </div>
+
+      <button id="findRoute" class="primary" type="button">Cari rute jalan</button>
+      <button id="reset" class="text-button" type="button">Reset pilihan</button>
+
+      <div id="status" class="status" role="status">Memuat data jalan…</div>
+      <div id="result" class="result hidden">
+        <div class="metric"><span>Jarak rute</span><strong id="distance">—</strong></div>
+        <p id="routeMessage"></p>
+      </div>
+
+      <div class="notice">
+        <strong>Tentang perhitungan rute</strong>
+        <p>Peta dan garis rute ditampilkan menggunakan modul CrootJS. Geometri rute jalan diminta dari layanan OSRM publik melalui internet; tidak diperlukan library JavaScript pemetaan tambahan. Jarak dan waktu tempuh merupakan perkiraan, bukan data lalu lintas langsung.</p>
+      </div>
+    </section>
+
+    <section class="map-panel">
+      <div class="map-toolbar">
+        <span><i class="dot start-dot"></i> Berangkat</span>
+        <span><i class="dot end-dot"></i> Tujuan</span>
+        <span><i class="route-key"></i> Rute</span>
+        <button id="zoomFit" type="button">Lihat semua</button>
+      </div>
+      <div id="map" aria-label="Peta interaktif"></div>
+      <div class="map-hint">Klik “Pilih di peta”, lalu klik lokasi. Peta dan garis GeoJSON digambar oleh modul CrootJS.</div>
+    </section>
+  </main>
+
+  <footer>Peta dan antarmuka menggunakan CrootJS · Rute jalan menggunakan layanan OSRM publik.</footer>
+</body>
+</html>
